@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "snapdraft_server"
+version = "0.1.0"
+description = ""
+authors = ["Dave DeCaprio <daved@alum.mit.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.115.3"}
+motor = "^3.6.0"
+pydantic = "^2.9.2"
+databases = "^0.9.0"
+pymupdf = "^1.24.13"
+pandas = "^2.2.3"
+dspy = "^2.5.29"
+pymupdf4llm = "^0.0.17"
+mongomock-motor = "^0.0.34"
+
+[tool.poetry.group.dev.dependencies]
+uvicorn = "^0.32.0"
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
+httpx = "^0.27.2"
+black = ">=24.4.2"
+pytest-mongodb = "^2.4.0"
+jupyterlab = "^4.2.5"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "--tb=short"
+mongodb_host = "localhost"
+mongodb_port = "27019"
+mongodb_dbname = "snapdraft_unittest"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
